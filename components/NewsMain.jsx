@@ -23,9 +23,9 @@ const NewsMain = ({ hightlightsOnly, newsId }) => {
   return (
     <div>
       <div className="flex-1 break-inside-avoid rounded-lg border border-gray-300 bg-white/20 bg-clip-padding p-6 pb-4 backdrop-blur-lg backdrop-filter  w-full h-fit">
-        <p className="my-4 font-satoshi text-sm text-gray-700">
+        <h1 className="my-4 font-satoshi text-md font-bold text-gray-700">
           {currNews.title}
-        </p>
+        </h1>
         <p className="my-4 font-satoshi text-sm text-gray-700">
           {currNews.date}
         </p>
