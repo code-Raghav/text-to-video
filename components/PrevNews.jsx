@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import NewsCard from "./NewsCard";
 
-const NewsCardList = ({ data, handleNewsClick = false }) => {
+const NewsCardList = ({ data, setNewsId }) => {
   const hightlightsOnly = true;
   return (
     <div className="space-y-6 py-8 sm:gap-6">
@@ -10,14 +10,14 @@ const NewsCardList = ({ data, handleNewsClick = false }) => {
         <NewsCard
           key={news._id}
           news={news}
-          handleNewsClick={handleNewsClick}
           hightlightsOnly={hightlightsOnly}
+          setNewsId={setNewsId}
         ></NewsCard>
       ))}
     </div>
   );
 };
-const PrevNews = () => {
+const PrevNews = ({ setNewsId }) => {
   const [allNews, setAllNews] = useState([]);
   const fetchNews = async () => {
     const response = await fetch("/api/news");
@@ -30,13 +30,11 @@ const PrevNews = () => {
     fetchNews();
   }, []);
 
-  const handleNewsClick = () => {};
-
   return (
     <section className="feed">
       {/* All News */}
       <h1 className="font-bold text-3xl">History</h1>
-      <NewsCardList data={allNews} handleNewsClick={handleNewsClick} />
+      <NewsCardList data={allNews} setNewsId={setNewsId} />
     </section>
   );
 };
