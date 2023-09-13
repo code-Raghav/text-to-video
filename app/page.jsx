@@ -1,5 +1,6 @@
 "use client";
 import PrevNews from "@/components/PrevNews";
+import InputField from "@components/InputField";
 import NewsMain from "@components/NewsMain";
 import { useSearchParams } from "next/navigation";
 import { useState } from "react";
@@ -19,7 +20,13 @@ const Home = () => {
       </p>
       <div className="flex flex-col-2 gap-4 pt-16">
         <PrevNews setNewsId={setNewsId} />
-        <NewsMain hightlightsOnly={hightlightsOnly} newsId={newsId} />
+        {newsId ? (
+          <NewsMain hightlightsOnly={hightlightsOnly} newsId={newsId} />
+        ) : (
+          <div className="w-full">
+            <InputField />
+          </div>
+        )}
       </div>
     </section>
   );

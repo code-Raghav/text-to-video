@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import ReactPlayer from "react-player";
+import LanguageDropdown from "./LanguageDropdown";
 
 const NewsMain = ({ hightlightsOnly, newsId }) => {
   const [currNews, setCurrNews] = useState([]);
@@ -23,21 +24,21 @@ const NewsMain = ({ hightlightsOnly, newsId }) => {
   return (
     <div>
       <div className="flex-1 break-inside-avoid rounded-lg border border-gray-300 bg-white/20 bg-clip-padding p-6 pb-4 backdrop-blur-lg backdrop-filter  w-full h-fit">
-        <h1 className="my-4 font-satoshi text-md font-bold text-gray-700">
+        <h1 className="my-4 font-satoshi text-lg font-bold text-gray-700">
           {currNews.title}
         </h1>
         <p className="my-4 font-satoshi text-sm text-gray-700">
           {currNews.date}
         </p>
         {hightlightsOnly == true || (
-          <p className="my-4 font-satoshi text-sm text-gray-700">
+          <p className="my-4 font-satoshi text-md text-gray-700">
             {currNews.content}
           </p>
         )}
         {videoUrl ? (
           ""
         ) : (
-          <div className="w-full flex justify-center">
+          <div className="w-full flex justify-center gap-3">
             <button
               type="button"
               className="outline_btn"
@@ -45,6 +46,7 @@ const NewsMain = ({ hightlightsOnly, newsId }) => {
             >
               Generate
             </button>
+            <LanguageDropdown />
           </div>
         )}
         {videoUrl ? (
