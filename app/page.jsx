@@ -8,7 +8,9 @@ const Home = () => {
       <p className="text-center ">
         Maximising governance through effective government communication
       </p>
-      <PrevNews />
+      <div className="left-0">
+        <PrevNews />
+      </div>
     </section>
   );
 };

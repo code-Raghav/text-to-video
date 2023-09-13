@@ -1,6 +1,6 @@
 "use client";
 
-const NewsCard = ({ news, handleNewsClick }) => {
+const NewsCard = ({ news, handleNewsClick, hightlightsOnly }) => {
   return (
     <div className="prompt_card">
       <div className="flex justify-between items-start gap-5">
@@ -10,8 +10,12 @@ const NewsCard = ({ news, handleNewsClick }) => {
         ></div>
       </div>
       <p className="my-4 font-satoshi text-sm text-gray-700">{news.title}</p>
-      <p className="my-4 font-satoshi text-sm text-gray-700">{news.content}</p>
       <p className="my-4 font-satoshi text-sm text-gray-700">{news.date}</p>
+      {hightlightsOnly == true || (
+        <p className="my-4 font-satoshi text-sm text-gray-700">
+          {news.content}
+        </p>
+      )}
     </div>
   );
 };

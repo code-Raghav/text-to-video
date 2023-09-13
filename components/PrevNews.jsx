@@ -2,14 +2,16 @@
 import { useState, useEffect } from "react";
 import NewsCard from "./NewsCard";
 
-const NewsCardList = ({ data, handleNewsClick }) => {
+const NewsCardList = ({ data, handleNewsClick = false }) => {
+  const hightlightsOnly = true;
   return (
-    <div className="mt-16 prompt_layout">
+    <div className="mt-16 space-y-6 py-8 sm:gap-6">
       {data.map((news) => (
         <NewsCard
           key={news._id}
           news={news}
           handleNewsClick={handleNewsClick}
+          hightlightsOnly={hightlightsOnly}
         ></NewsCard>
       ))}
     </div>

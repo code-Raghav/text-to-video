@@ -1,5 +1,5 @@
 import Provider from "@/components/Provider";
-import "./globals.css";
+import "@styles/globals.css";
 
 export const metadata = {
   title: "Press information Bureau",
