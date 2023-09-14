@@ -10,13 +10,12 @@ const NewsMain = ({ hightlightsOnly, newsId }) => {
   const fetchNews = async () => {
     const response = await fetch(`/api/news/${newsId}`);
     const data = await response.json();
-
     setCurrNews(data);
   };
 
   useEffect(() => {
     fetchNews();
-  }, newsId);
+  }, [newsId]);
 
   const generateVideo = () => {
     setVideoUrl("https://youtu.be/keVjkYWTH3M?feature=shared");
@@ -31,7 +30,10 @@ const NewsMain = ({ hightlightsOnly, newsId }) => {
           {currNews.date}
         </p>
         {hightlightsOnly == true || (
-          <p className="my-4 font-satoshi text-md text-gray-700">
+          <p
+            className="my-4 font-satoshi text-md text-gray-700 whitespace-pre-line"
+            id="content-news"
+          >
             {currNews.content}
           </p>
         )}

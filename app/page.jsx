@@ -19,12 +19,14 @@ const Home = () => {
         Maximising governance through effective government communication
       </p>
       <div className="flex flex-col-2 gap-4 pt-16">
-        <PrevNews setNewsId={setNewsId} />
+        <div>
+          <PrevNews setNewsId={setNewsId} />
+        </div>
         {newsId ? (
           <NewsMain hightlightsOnly={hightlightsOnly} newsId={newsId} />
         ) : (
           <div className="w-full">
-            <InputField />
+            <InputField setNewsId={setNewsId} />
           </div>
         )}
       </div>

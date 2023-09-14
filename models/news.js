@@ -1,6 +1,10 @@
 import { Schema, model, models } from "mongoose";
 
 const NewsSchema = new Schema({
+  article: {
+    type: String,
+    required: [true, "Article ID is required"],
+  },
   title: {
     type: String,
     required: [true, "News title is required."],
