@@ -22,7 +22,7 @@ const InputField = ({ setNewsId }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex items-center">
+    <form onSubmit={handleSubmit} className="flex items-center gap-2">
       <input
         type="text"
         placeholder="Enter the id of PIB Press Release you want to convert..."
@@ -30,10 +30,7 @@ const InputField = ({ setNewsId }) => {
         onChange={handleSearchChange}
         className="border border-gray-400 px-4 py-2 rounded-l-lg focus:outline-none focus:border-blue-500 flex-grow"
       />
-      <button
-        type="submit"
-        className="bg-blue-500 text-white px-4 py-2 rounded-r-lg hover:bg-blue-600 focus:outline-none"
-      >
+      <button type="submit" className="outline_btn">
         Search
       </button>
     </form>

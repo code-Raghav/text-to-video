@@ -23,24 +23,19 @@ const NewsMain = ({ hightlightsOnly, newsId }) => {
   return (
     <div>
       <div className="flex-1 break-inside-avoid rounded-lg border border-gray-300 bg-white/20 bg-clip-padding p-6 pb-4 backdrop-blur-lg backdrop-filter  w-full h-fit">
-        <h1 className="my-4 font-satoshi text-lg font-bold text-gray-700">
+        <h1 className="my-4 font-inter text-lg font-bold text-gray-700">
           {currNews.title}
         </h1>
-        <p className="my-4 font-satoshi text-sm text-gray-700">
-          {currNews.date}
-        </p>
+        <p className="my-4 font-inter text-sm text-gray-700">{currNews.date}</p>
         {hightlightsOnly == true || (
-          <p
-            className="my-4 font-satoshi text-md text-gray-700 whitespace-pre-line"
-            id="content-news"
-          >
+          <p className="my-4text-md text-gray-700 whitespace-pre-line font-inter">
             {currNews.content}
           </p>
         )}
         {videoUrl ? (
           ""
         ) : (
-          <div className="w-full flex justify-center gap-3">
+          <div className="w-full flex justify-center gap-3 pt-4">
             <button
               type="button"
               className="outline_btn"

@@ -5,7 +5,7 @@ import NewsCard from "./NewsCard";
 const NewsCardList = ({ data, setNewsId }) => {
   const hightlightsOnly = true;
   return (
-    <div className="space-y-6 py-8 sm:gap-6">
+    <div className="space-y-6 py-8 sm:gap-6 ">
       {data.map((news) => (
         <NewsCard
           key={news._id}
@@ -33,7 +33,7 @@ const PrevNews = ({ setNewsId }) => {
   return (
     <section className="feed">
       {/* All News */}
-      <h1 className="font-bold text-3xl">History</h1>
+      <h1 className="font-bold text-3xl font-inter">History</h1>
       <NewsCardList data={allNews} setNewsId={setNewsId} />
     </section>
   );
